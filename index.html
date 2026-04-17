@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helen Nathaly Bernal Males — Psicóloga Educativa</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FDFAF5;
+    --sage: #7A9E87;
+    --sage-light: #A8C4B0;
+    --sage-dark: #4D7A5E;
+    --mauve: #9B7FA0;
+    --mauve-light: #C4A8C9;
+    --charcoal: #2C2C2C;
+    --warm-gray: #6B6459;
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+  }
+ 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  html { scroll-behavior: smooth; }
+ 
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+ 
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(253, 250, 245, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+  }
+ 
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--charcoal);
+    text-transform: uppercase;
+  }
+ 
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+ 
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+  }
+ 
+  .nav-links a:hover { color: var(--sage-dark); }
+ 
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -10%; right: -5%;
+    width: 55%;
+    height: 110%;
+    background: linear-gradient(160deg, #E8F0EA 0%, #D4E4D9 50%, #C5D8CC 100%);
+    border-radius: 0 0 0 60% / 0 0 0 40%;
+    z-index: 0;
+  }
+ 
+  .hero-text {
+    padding: 4rem 4rem 4rem 6rem;
+    position: relative;
+    z-index: 1;
+    animation: fadeInLeft 1s ease forwards;
+  }
+ 
+  .hero-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    border: 1px solid var(--sage);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+ 
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.01em;
+  }
+ 
+  .hero-title em {
+    font-style: italic;
+    color: var(--sage-dark);
+  }
+ 
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    margin-bottom: 2rem;
+  }
+ 
+  .hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--warm-gray);
+    max-width: 420px;
+    margin-bottom: 3rem;
+  }
+ 
+  .hero-cta {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+ 
+  .btn-primary {
+    padding: 0.9rem 2.2rem;
+    background: var(--sage-dark);
+    color: white;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 100px;
+    transition: all 0.3s;
+    font-weight: 500;
+  }
+ 
+  .btn-primary:hover {
+    background: var(--charcoal);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+ 
+  .btn-secondary {
+    padding: 0.9rem 2.2rem;
+    color: var(--charcoal);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--charcoal);
+    border-radius: 100px;
+    transition: all 0.3s;
+    font-weight: 400;
+  }
+ 
+  .btn-secondary:hover {
+    background: var(--charcoal);
+    color: white;
+  }
+ 
+  .hero-image-wrap {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 5rem 4rem 2rem;
+    animation: fadeInRight 1s ease forwards;
+  }
+ 
+  .hero-img-frame {
+    position: relative;
+    width: 380px;
+    height: 480px;
+  }
+ 
+  .hero-img-frame::before {
+    content: '';
+    position: absolute;
+    top: -16px; left: -16px;
+    width: 100%; height: 100%;
+    border: 2px solid var(--gold);
+    border-radius: 60% 40% 55% 45% / 50% 50% 50% 50%;
+    z-index: 0;
+    animation: rotateFrame 20s linear infinite;
+  }
+ 
+  @keyframes rotateFrame {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+ 
+  .hero-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 60% 40% 55% 45% / 50% 50% 50% 50%;
+    position: relative;
+    z-index: 1;
+    filter: grayscale(8%) contrast(1.05);
+  }
+ 
+  .hero-img-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 60% 40% 55% 45% / 50% 50% 50% 50%;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, var(--sage-light) 0%, var(--mauve-light) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+ 
+  .initials-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: white;
+    letter-spacing: 0.05em;
+  }
+ 
+  .hero-float-card {
+    position: absolute;
+    bottom: 40px;
+    right: -20px;
+    background: white;
+    border-radius: 16px;
+    padding: 1rem 1.4rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+  }
+ 
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+ 
+  .float-card-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 0.2rem;
+  }
+ 
+  .float-card-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--sage-dark);
+    line-height: 1;
+  }
+ 
+  .float-card-sub {
+    font-size: 0.72rem;
+    color: var(--warm-gray);
+    margin-top: 0.2rem;
+  }
+ 
+  /* ─── SECTION BASE ─── */
+  section {
+    padding: 7rem 6rem;
+  }
+ 
+  .section-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+ 
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+  }
+ 
+  .section-title em {
+    font-style: italic;
+    color: var(--sage-dark);
+  }
+ 
+  /* ─── ABOUT / PERFIL ─── */
+  #perfil {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: center;
+  }
+ 
+  .perfil-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+ 
+  .stat-box {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border-left: 3px solid var(--sage);
+    transition: transform 0.3s;
+  }
+ 
+  .stat-box:hover { transform: translateY(-4px); }
+ 
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--sage-dark);
+    line-height: 1;
+  }
+ 
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--warm-gray);
+    margin-top: 0.3rem;
+    letter-spacing: 0.05em;
+  }
+ 
+  .perfil-right p {
+    font-size: 0.98rem;
+    line-height: 1.9;
+    color: var(--warm-gray);
+    margin-bottom: 1.2rem;
+  }
+ 
+  .perfil-highlight {
+    background: var(--sage-dark);
+    color: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+ 
+  .perfil-highlight p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.92);
+    margin: 0;
+  }
+ 
+  /* ─── EXPERIENCIA ─── */
+  #experiencia {
+    background: var(--warm-white);
+  }
+ 
+  .exp-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+ 
+  .exp-card {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2.5rem;
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .exp-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--sage) 0%, var(--mauve) 100%);
+    border-radius: 4px 0 0 4px;
+  }
+ 
+  .exp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  }
+ 
+  .exp-period {
+    text-align: right;
+    padding-top: 0.3rem;
+  }
+ 
+  .exp-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--sage-light);
+    line-height: 1;
+  }
+ 
+  .exp-duration {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-top: 0.4rem;
+  }
+ 
+  .exp-type-badge {
+    display: inline-block;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    margin-top: 0.8rem;
+    font-weight: 500;
+  }
+ 
+  .badge-pasantia { background: #E8F0EA; color: var(--sage-dark); }
+  .badge-voluntariado { background: #F0EBF5; color: var(--mauve); }
+ 
+  .exp-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.4rem;
+  }
+ 
+  .exp-org {
+    font-size: 0.82rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+ 
+  .exp-desc {
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: var(--warm-gray);
+  }
+ 
+  .exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+  }
+ 
+  .exp-tag {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.8rem;
+    background: var(--cream);
+    border-radius: 100px;
+    color: var(--warm-gray);
+    letter-spacing: 0.05em;
+  }
+ 
+  /* ─── FORMACIÓN ─── */
+  #formacion {
+    background: linear-gradient(135deg, #2C2C2C 0%, #3D3530 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  #formacion::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 60%;
+    height: 130%;
+    background: radial-gradient(circle, rgba(122, 158, 135, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+ 
+  #formacion .section-title { color: white; }
+  #formacion .section-tag { color: var(--sage-light); }
+ 
+  .formacion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+ 
+  .formacion-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+  }
+ 
+  .formacion-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-4px);
+  }
+ 
+  .formacion-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--sage-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+  }
+ 
+  .formacion-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 0.4rem;
+  }
+ 
+  .formacion-card .inst {
+    font-size: 0.82rem;
+    color: var(--sage-light);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.8rem;
+  }
+ 
+  .formacion-card .year-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201, 169, 110, 0.4);
+    padding: 0.25rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 0.8rem;
+  }
+ 
+  .formacion-card p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+ 
+  /* ─── HABILIDADES ─── */
+  #habilidades {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+ 
+  .skill-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+ 
+  .skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem 1.4rem;
+    background: white;
+    border-radius: 12px;
+    transition: all 0.3s;
+    cursor: default;
+  }
+ 
+  .skill-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+  }
+ 
+  .skill-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--sage);
+    flex-shrink: 0;
+  }
+ 
+  .skill-name {
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    font-weight: 400;
+    flex: 1;
+  }
+ 
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+ 
+  .tech-pill {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--charcoal);
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+ 
+  .tech-pill span.icon { font-size: 1.4rem; }
+  .tech-pill:hover {
+    background: var(--sage-dark);
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(77, 122, 94, 0.3);
+  }
+ 
+  /* ─── IDIOMAS ─── */
+  .idiomas-wrap {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+ 
+  .idioma-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    border-top: 3px solid var(--mauve);
+    transition: transform 0.3s;
+  }
+ 
+  .idioma-card:hover { transform: translateY(-4px); }
+ 
+  .idioma-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+ 
+  .idioma-level {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: var(--mauve-light);
+    color: var(--mauve);
+    padding: 0.25rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+ 
+  .idioma-details {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    line-height: 1.7;
+  }
+ 
+  /* ─── CURSOS ─── */
+  #cursos {
+    background: var(--warm-white);
+  }
+ 
+  .cursos-timeline {
+    position: relative;
+    margin-top: 3rem;
+    padding-left: 2rem;
+  }
+ 
+  .cursos-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, var(--sage) 0%, var(--mauve) 100%);
+  }
+ 
+  .curso-item {
+    position: relative;
+    padding: 0 0 2rem 2.5rem;
+  }
+ 
+  .curso-item::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 8px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--sage);
+    border: 2px solid var(--warm-white);
+    box-shadow: 0 0 0 2px var(--sage);
+  }
+ 
+  .curso-year {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+ 
+  .curso-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    line-height: 1.3;
+  }
+ 
+  .curso-org {
+    font-size: 0.8rem;
+    color: var(--warm-gray);
+    margin-top: 0.2rem;
+  }
+ 
+  /* ─── REFERENCIAS ─── */
+  #referencias {
+    background: var(--cream);
+  }
+ 
+  .ref-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+ 
+  .ref-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: all 0.4s;
+    border-bottom: 3px solid transparent;
+  }
+ 
+  .ref-card:hover {
+    transform: translateY(-6px);
+    border-bottom-color: var(--sage);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  }
+ 
+  .ref-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sage-light), var(--mauve-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: white;
+  }
+ 
+  .ref-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+ 
+  .ref-role {
+    font-size: 0.8rem;
+    color: var(--sage-dark);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+ 
+  .ref-phone {
+    font-size: 0.85rem;
+    color: var(--warm-gray);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+ 
+  /* ─── CONTACTO ─── */
+  #contacto {
+    background: linear-gradient(135deg, var(--sage-dark) 0%, #3D5C4A 50%, #2C4035 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  #contacto::before {
+    content: 'H';
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40vw;
+    font-weight: 700;
+    color: rgba(255,255,255,0.03);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    line-height: 1;
+  }
+ 
+  #contacto .section-title { color: white; }
+  #contacto .section-tag { color: var(--gold-light); }
+ 
+  .contact-desc {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 500px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+ 
+  .contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+ 
+  .contact-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+    text-align: center;
+    min-width: 180px;
+  }
+ 
+  .contact-card:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-6px);
+  }
+ 
+  .contact-card-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+ 
+  .contact-card-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 0.3rem;
+  }
+ 
+  .contact-card-value {
+    font-size: 0.88rem;
+    color: white;
+  }
+ 
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+  }
+ 
+  footer span { color: var(--gold); }
+ 
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+ 
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+ 
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+ 
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+ 
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero::before { display: none; }
+    .hero-text { padding: 6rem 1.5rem 2rem; }
+    .hero-image-wrap { padding: 2rem; }
+    .hero-img-frame { width: 260px; height: 320px; }
+    section { padding: 4rem 1.5rem; }
+    #perfil, #habilidades { grid-template-columns: 1fr; gap: 2rem; }
+    .formacion-grid, .ref-grid, .idiomas-wrap { grid-template-columns: 1fr; }
+    .exp-card { grid-template-columns: 1fr; gap: 1rem; }
+    .exp-period { text-align: left; }
+    .tech-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+ 
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">HN · Bernal</div>
+  <ul class="nav-links">
+    <li><a href="#perfil">Perfil</a></li>
+    <li><a href="#experiencia">Experiencia</a></li>
+    <li><a href="#formacion">Formación</a></li>
+    <li><a href="#habilidades">Habilidades</a></li>
+    <li><a href="#cursos">Cursos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+ 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <span class="hero-badge">Psicóloga Educativa · Ecuador</span>
+    <h1 class="hero-title">
+      Helen<br><em>Nathaly</em><br>Bernal Males
+    </h1>
+    <p class="hero-subtitle">Licenciada en Psicología Educativa</p>
+    <p class="hero-desc">
+      Profesional educativa y psicopedagógica con experiencia académica y laboral. 
+      Experta en atención a necesidades educativas especiales, con enfoque en 
+      discapacidades del desarrollo y apoyo psicosocial integral.
+    </p>
+    <div class="hero-cta">
+      <a href="#experiencia" class="btn-primary">Ver Experiencia</a>
+      <a href="#contacto" class="btn-secondary">Contactar</a>
+    </div>
+  </div>
+ 
+  <div class="hero-image-wrap">
+    <div class="hero-img-frame">
+      <!-- Imagen del profesional -->
+      <img
+        src="helen.jpeg"
+        alt="Helen Nathaly Bernal Males"
+        style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:60% 40% 55% 45% / 50% 50% 50% 50%;position:relative;z-index:1;filter:grayscale(8%) contrast(1.05);"
+      >
+    </div>
+    <div class="hero-float-card">
+      <div class="float-card-label">Registro SENECYT</div>
+      <div class="float-card-value">2025</div>
+      <div class="float-card-sub">1059-2025-3239056</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- PERFIL -->
+<section id="perfil" class="reveal">
+  <div>
+    <span class="section-tag">Quién soy</span>
+    <h2 class="section-title">Perfil<br><em>Profesional</em></h2>
+    <div class="perfil-stats">
+      <div class="stat-box">
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Años de formación universitaria</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Experiencias laborales</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">B2</div>
+        <div class="stat-label">Nivel de inglés certificado</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Cursos y capacitaciones</div>
+      </div>
+    </div>
+  </div>
+  <div class="perfil-right">
+    <p>
+      Soy una psicóloga educativa titulada de la Universidad de Otavalo, con especialización 
+      en el acompañamiento a niños, adolescentes y comunidades educativas. Mi enfoque integra 
+      la psicopedagogía con estrategias adaptadas a las necesidades individuales de cada estudiante.
+    </p>
+    <p>
+      He trabajado con poblaciones diversas, incluyendo niños con Trastorno del Espectro Autista 
+      (TEA), Trastorno por Déficit de Atención e Hiperactividad (TDAH), y adolescentes con 
+      consumo problemático de sustancias, desde un enfoque integral y humanista.
+    </p>
+    <p>
+      Me distingo por mi capacidad de liderazgo, facilidad de comunicación y adaptabilidad 
+      ante situaciones adversas. Considero fundamental la empatía y el trabajo colaborativo 
+      con familias, docentes y equipos multidisciplinarios.
+    </p>
+    <div class="perfil-highlight">
+      <p>"Soy una experta en lo que hago, una gran líder y compañera. Tengo una gran facilidad 
+      de palabra y me adapto a las adversidades."</p>
+    </div>
+    <div class="idiomas-wrap">
+      <div class="idioma-card">
+        <div class="idioma-name">Inglés</div>
+        <span class="idioma-level">B2 — Certificado</span>
+        <div class="idioma-details">
+          Nivel oral: Bilingüe<br>
+          Nivel escrito: Intermedio
+        </div>
+      </div>
+      <div class="idioma-card">
+        <div class="idioma-name">Español</div>
+        <span class="idioma-level">Nativo</span>
+        <div class="idioma-details">
+          Dominio completo oral y escrito.<br>
+          Lengua materna.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- EXPERIENCIA -->
+<section id="experiencia">
+  <span class="section-tag">Trayectoria</span>
+  <h2 class="section-title">Experiencia<br><em>Laboral</em></h2>
+ 
+  <div class="exp-grid">
+    <div class="exp-card reveal">
+      <div class="exp-period">
+        <div class="exp-year">2023</div>
+        <div class="exp-duration">2023 – 2024</div>
+        <span class="exp-type-badge badge-pasantia">Pasantía</span>
+      </div>
+      <div class="exp-content">
+        <h3>Psicopedagoga Institucional</h3>
+        <div class="exp-org">Unidad Educativa "República del Ecuador"</div>
+        <p class="exp-desc">
+          Atención integral a niños y adolescentes mediante adaptaciones curriculares y 
+          seguimiento psicopedagógico personalizado. Trabajo especializado con estudiantes 
+          con discapacidades del desarrollo, implementando estrategias inclusivas y 
+          diferenciadas para garantizar el acceso equitativo al aprendizaje.
+        </p>
+        <div class="exp-tags">
+          <span class="exp-tag">Trastorno del Espectro Autista</span>
+          <span class="exp-tag">TDAH</span>
+          <span class="exp-tag">Adaptaciones curriculares</span>
+          <span class="exp-tag">Inclusión educativa</span>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="exp-card reveal">
+      <div class="exp-period">
+        <div class="exp-year">CETAD</div>
+        <div class="exp-duration">Otavalo</div>
+        <span class="exp-type-badge badge-voluntariado">Voluntariado</span>
+      </div>
+      <div class="exp-content">
+        <h3>Voluntaria en Tratamiento Integral</h3>
+        <div class="exp-org">CETAD — Centro Especializado de Tratamiento · Otavalo</div>
+        <p class="exp-desc">
+          Servicio especializado a adolescentes varones de 12 a 17 años 11 meses de edad, 
+          con consumo problemático de alcohol y otras drogas. Aplicación del tratamiento 
+          integral residencial en un entorno multidisciplinario, acompañando procesos de 
+          rehabilitación y reinserción social.
+        </p>
+        <div class="exp-tags">
+          <span class="exp-tag">Rehabilitación</span>
+          <span class="exp-tag">Adolescentes</span>
+          <span class="exp-tag">Tratamiento residencial</span>
+          <span class="exp-tag">Prevención de adicciones</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- FORMACIÓN -->
+<section id="formacion">
+  <span class="section-tag">Educación</span>
+  <h2 class="section-title">Formación<br><em>Académica</em></h2>
+ 
+  <div class="formacion-grid">
+    <div class="formacion-card reveal">
+      <div class="formacion-icon">🎓</div>
+      <h3>Licenciatura en Psicología Educativa</h3>
+      <div class="inst">Universidad de Otavalo</div>
+      <span class="year-tag">2021 – 2025</span>
+      <p>Título de grado en Psicología Educativa con registro de la SENECYT Nº 1059-2025-3239056. 
+      Formación integral en psicopedagogía, evaluación diagnóstica y atención a necesidades educativas especiales.</p>
+    </div>
+ 
+    <div class="formacion-card reveal">
+      <div class="formacion-icon">📋</div>
+      <h3>Registro Profesional SENECYT</h3>
+      <div class="inst">Sistema Nacional de Educación Superior</div>
+      <span class="year-tag">2025</span>
+      <p>Registro oficial habilitante para el ejercicio de la profesión de psicóloga educativa 
+      en el Ecuador, emitido por la Secretaría Nacional de Educación Superior, Ciencia y Tecnología.</p>
+    </div>
+ 
+    <div class="formacion-card reveal">
+      <div class="formacion-icon">🌐</div>
+      <h3>Inglés B2 — Nivel Certificado</h3>
+      <div class="inst">Marco Común Europeo de Referencia</div>
+      <span class="year-tag">Certificado</span>
+      <p>Competencia comunicativa en inglés a nivel B2, con habilidad oral bilingüe y 
+      comprensión y producción escrita a nivel intermedio-avanzado.</p>
+    </div>
+ 
+    <div class="formacion-card reveal">
+      <div class="formacion-icon">🔬</div>
+      <h3>Formación Continua e Investigación</h3>
+      <div class="inst">Múltiples instituciones · 2020–2025</div>
+      <span class="year-tag">2020 – 2025</span>
+      <p>Participación activa en congresos, encuentros internacionales y jornadas de 
+      investigación, fortaleciendo la práctica profesional con evidencia científica actualizada.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- HABILIDADES -->
+<section id="habilidades" class="reveal">
+  <div>
+    <span class="section-tag">Competencias</span>
+    <h2 class="section-title">Habilidades<br><em>Profesionales</em></h2>
+ 
+    <div class="skill-list">
+      <div class="skill-item">
+        <div class="skill-dot"></div>
+        <span class="skill-name">Evaluación y diagnóstico de dificultades de aprendizaje</span>
+      </div>
+      <div class="skill-item">
+        <div class="skill-dot"></div>
+        <span class="skill-name">Diseño de adaptaciones curriculares individualizadas</span>
+      </div>
+      <div class="skill-item">
+        <div class="skill-dot"></div>
+        <span class="skill-name">Atención a niños con TEA y TDAH</span>
+      </div>
+      <div class="skill-item">
+        <div class="skill-dot"></div>
+        <span class="skill-name">Empatía y escucha activa con estudiantes, docentes y familias</span>
+      </div>
+      <div class="skill-item">
+        <div class="skill-dot"></div>
+        <span class="skill-name">Trabajo con adolescentes en situación de vulnerabilidad</span>
+      </div>
+      <div class="skill-item">
+        <div class="skill-dot"></div>
+        <span class="skill-name">Liderazgo de equipo y comunicación asertiva</span>
+      </div>
+      <div class="skill-item">
+        <div class="skill-dot"></div>
+        <span class="skill-name">Seguimiento psicopedagógico y elaboración de informes</span>
+      </div>
+    </div>
+  </div>
+ 
+  <div>
+    <span class="section-tag">Tecnología</span>
+    <h2 class="section-title">Herramientas<br><em>Digitales</em></h2>
+ 
+    <div class="tech-grid">
+      <div class="tech-pill"><span class="icon">📊</span>Excel</div>
+      <div class="tech-pill"><span class="icon">💼</span>Microsoft Teams</div>
+      <div class="tech-pill"><span class="icon">🎨</span>Canva</div>
+      <div class="tech-pill"><span class="icon">🎥</span>Zoom</div>
+      <div class="tech-pill"><span class="icon">📚</span>EVA</div>
+      <div class="tech-pill"><span class="icon">📌</span>Padlet</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CURSOS -->
+<section id="cursos">
+  <span class="section-tag">Formación continua</span>
+  <h2 class="section-title">Cursos &<br><em>Capacitaciones</em></h2>
+ 
+  <div class="cursos-timeline">
+    <div class="curso-item reveal">
+      <div class="curso-year">2020</div>
+      <div class="curso-title">Taller: Atención a Necesidades Educativas Especiales con Discapacidad Visual</div>
+      <div class="curso-org">Sistema Braille y estrategias didácticas</div>
+    </div>
+    <div class="curso-item reveal">
+      <div class="curso-year">2021</div>
+      <div class="curso-title">I Seminario de Actores Interculturales</div>
+      <div class="curso-org">Formación en diversidad e interculturalidad</div>
+    </div>
+    <div class="curso-item reveal">
+      <div class="curso-year">2024</div>
+      <div class="curso-title">I Congreso Internacional de Educación, Investigación e Interdisciplinariedad</div>
+      <div class="curso-org">Evento académico internacional</div>
+    </div>
+    <div class="curso-item reveal">
+      <div class="curso-year">2024</div>
+      <div class="curso-title">Ortografía y Redacción</div>
+      <div class="curso-org">Fundación Carlos Slim</div>
+    </div>
+    <div class="curso-item reveal">
+      <div class="curso-year">2024</div>
+      <div class="curso-title">El Aprendizaje en los Adultos</div>
+      <div class="curso-org">Fundación Carlos Slim</div>
+    </div>
+    <div class="curso-item reveal">
+      <div class="curso-year">2025</div>
+      <div class="curso-title">2do Encuentro Binacional de Formación para la Investigación RedCOLSI-Nodo Nariño</div>
+      <div class="curso-org">Evento binacional Ecuador-Colombia</div>
+    </div>
+    <div class="curso-item reveal">
+      <div class="curso-year">2025</div>
+      <div class="curso-title">Jornada Intersectorial de Actores Externos para la Docencia, Investigación y Vinculación</div>
+      <div class="curso-org">Vinculación con la sociedad · 2025</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- REFERENCIAS -->
+<section id="referencias">
+  <span class="section-tag">Avales</span>
+  <h2 class="section-title">Referencias<br><em>Profesionales</em></h2>
+ 
+  <div class="ref-grid">
+    <div class="ref-card reveal">
+      <div class="ref-avatar">CE</div>
+      <div class="ref-name">Msc. Cristian David Erazo</div>
+      <div class="ref-role">Terapeuta Ocupacional — CETAD Quito</div>
+      <div class="ref-phone">📞 098 373 2158</div>
+    </div>
+    <div class="ref-card reveal">
+      <div class="ref-avatar">JG</div>
+      <div class="ref-name">Msc. José Israel Guzmán Jumbo</div>
+      <div class="ref-role">Psicólogo Clínico</div>
+      <div class="ref-phone">📞 099 286 8338</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CONTACTO -->
+<section id="contacto">
+  <span class="section-tag">Hablemos</span>
+  <h2 class="section-title">Ponerse en<br><em>Contacto</em></h2>
+  <p class="contact-desc">
+    ¿Interesada en colaborar o tienes una oportunidad profesional? 
+    Estoy disponible para conversar sobre proyectos educativos y psicopedagógicos.
+  </p>
+ 
+  <div class="contact-cards">
+    <a href="mailto:helennathaly2000@outlook.com" class="contact-card">
+      <div class="contact-card-icon">✉️</div>
+      <div class="contact-card-label">Correo</div>
+      <div class="contact-card-value">helennathaly2000@outlook.com</div>
+    </a>
+    <a href="tel:+593981186981" class="contact-card">
+      <div class="contact-card-icon">📱</div>
+      <div class="contact-card-label">Celular</div>
+      <div class="contact-card-value">098 118 6981</div>
+    </a>
+    <div class="contact-card">
+      <div class="contact-card-icon">📍</div>
+      <div class="contact-card-label">Ubicación</div>
+      <div class="contact-card-value">Portoviejo, Manabí · Ecuador</div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">🪪</div>
+      <div class="contact-card-label">Cédula</div>
+      <div class="contact-card-value">1003853700</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Helen Nathaly Bernal Males</span> — Licenciada en Psicología Educativa · SENECYT 1059-2025-3239056</p>
+</footer>
+ 
+<script>
+  // Intersection Observer for reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+ 
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
